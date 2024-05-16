@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <Adminbar />
+  <slot />
 </template>
 
 <style scoped>

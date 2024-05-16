@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <Adminbar />
+  <ToolbarPublic />
 </template>
 
 <style scoped>

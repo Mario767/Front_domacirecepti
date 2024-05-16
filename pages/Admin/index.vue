@@ -23,7 +23,7 @@ definePageMeta({
         of Lorem Ipsum.
       </div>
 
-      <v-img class="mt-4" contain max-height="400" src="img/cover-admin.jpeg"></v-img>
+
     </v-col>
   </v-row>
 </template>

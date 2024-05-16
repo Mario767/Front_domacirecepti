@@ -37,10 +37,16 @@ const closeDrawerOnLargeScreen = () => {
     drawer.value = false;
   }
 };
+
+import accountStore from '@/composables/accountStore'; // Prilagodite putanju prema vašem stvarnom položaju
+
+const redirectToProfile = () => {
+  accountStore.actions.login();
+};
 </script>
 
 <template>
-  <v-app>
+
     <v-app-bar fixed app height="80" color="#C87C36">
       <div style="display: flex; align-items: center;">
         <img v-if="!isMobile" class="tw-max-h-[80px] ml-16" src="/img/icon-hat.svg" />
@@ -55,8 +61,14 @@ const closeDrawerOnLargeScreen = () => {
       </div>
       <v-spacer />
       <div class="vl" style="display: flex; align-items: center;">
-        <nuxt-link to="/search"><img class="sl" src="/img/search-icon.svg" /></nuxt-link>
-        <nuxt-link to="/login"><img class="mr" src="/img/profile.svg" /></nuxt-link>
+        <nuxt-link to="/search"><img class="sl"  src="/img/search-icon.svg"></nuxt-link>
+        <div>
+   
+      <img class="mr" src="/img/profile.svg" @click="redirectToProfile" />
+   
+    
+</div>
+
       </div>
       <v-btn v-if="isMobile" icon @click.stop="drawer = !drawer">
         <v-icon>{{ drawerIcon }}</v-icon>
@@ -87,7 +99,7 @@ const closeDrawerOnLargeScreen = () => {
         </v-row>
       </v-container>
     </v-main>
-  </v-app>
+
 </template>
 
 <style scoped>
